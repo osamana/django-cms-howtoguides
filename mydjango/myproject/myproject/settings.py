@@ -27,33 +27,31 @@ SECRET_KEY = 'p61=83=_(&7lk4j7oh38+l)-(08q-%ep^zi^e24cs+)$&kxrr+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+FILER_STATICMEDIA_PREFIX = ''
+
 ALLOWED_HOSTS = []
 
 # Application definition
 
 INSTALLED_APPS = [
-    'djangocms_admin_style',
+
     # for the admin skin. You **must** add 'djangocms_admin_style' in the list **before** 'django.contrib.admin'.
-    'django.contrib.admin',
+
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'djangocms_admin_style',
+    'django.contrib.admin',
     'django.contrib.sites',
     'cms',  # django CMS itself
     'treebeard',  # utilities for implementing a tree
     'menus',  # helper for model independent hierarchical website navigation
     'sekizai',  # for JavaScript and CSS management
-
+    'filer',
+    'easy_thumbnails',
     'djangocms_file',
-    'cmsplugin_filer_file',
-    'cmsplugin_filer_folder',
-    'cmsplugin_filer_link',
-    'cmsplugin_filer_image',
-    'cmsplugin_filer_teaser',
-    'cmsplugin_filer_video',
-
     'djangocms_googlemap',
     'djangocms_inherit',
     'djangocms_picture',
@@ -61,6 +59,15 @@ INSTALLED_APPS = [
     'djangocms_video',
     'djangocms_link',
     'djangocms_snippet',
+
+    'cmsplugin_filer_file',
+    'cmsplugin_filer_folder',
+    'cmsplugin_filer_link',
+    'cmsplugin_filer_image',
+    'cmsplugin_filer_teaser',
+    'cmsplugin_filer_video',
+    'myproject',
+
 ]
 
 MIDDLEWARE_CLASSES = (
@@ -155,12 +162,13 @@ MEDIA_URL = "/media/"
 
 SITE_ID = 1
 
-
 CMS_TEMPLATES = (
     ('template_1.html', 'Template One'),
     ('template_2.html', 'Template Two'),
 )
 
 LANGUAGES = [
-    ('en', 'English'),
+    ('en-us', 'English'),
 ]
+
+

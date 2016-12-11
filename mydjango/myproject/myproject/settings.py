@@ -29,7 +29,11 @@ DEBUG = True
 
 FILER_STATICMEDIA_PREFIX = ''
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '192.168.33.10',
+    'djangocms.dev',
+    'www.djangocms.dev',
+]
 
 # Application definition
 
@@ -170,7 +174,6 @@ CMS_TEMPLATES = (
 LANGUAGES = [
     ('en-us', 'English'),
 ]
-
 
 THUMBNAIL_PROCESSORS = (
     'easy_thumbnails.processors.colorspace',
